@@ -1,8 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0b0b0b; /* near-black */
+  --foreground: #f7f6f2; /* off-white */
+}
+
+html[data-theme="inverted"] {
+  --background: #f7f6f2; /* off-white */
+  --foreground: #0b0b0b; /* near-black */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
 }
 
 @theme inline {
@@ -12,15 +19,17 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system,
+    Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
 }
+
+html,
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+/* (HeroMarquee) JS-driven ping-pong marquee doesn't need keyframes. */
