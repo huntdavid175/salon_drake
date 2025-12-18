@@ -80,15 +80,15 @@ export default function Home() {
             creating custom looks for our Montreal clients
           </p>
 
-          <div className="mt-10 flex items-center gap-4">
+          <div className="mt-10 flex flex-col items-stretch gap-4 sm:flex-row sm:items-center">
             <a
-              className="inline-flex h-[72px] min-w-[260px] items-center justify-center rounded-2xl border border-background bg-foreground px-10 text-center font-(--font-display) text-2xl uppercase tracking-wide text-background transition-transform hover:-translate-y-0.5 hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-foreground/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background md:h-[84px] md:min-w-[320px]"
+              className="inline-flex h-[72px] w-full items-center justify-center rounded-2xl border border-background bg-foreground px-10 text-center font-(--font-display) text-2xl uppercase tracking-wide text-background transition-transform hover:-translate-y-0.5 hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-foreground/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:w-auto sm:min-w-[260px] md:h-[84px] md:min-w-[320px]"
               href="#"
             >
               book now
             </a>
             <a
-              className="inline-flex h-[72px] min-w-[260px] items-center justify-center rounded-2xl border border-foreground bg-background px-10 text-center font-(--font-display) text-2xl uppercase tracking-wide text-foreground transition-transform hover:-translate-y-0.5 hover:bg-foreground/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-foreground/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background md:h-[84px] md:min-w-[320px]"
+              className="inline-flex h-[72px] w-full items-center justify-center rounded-2xl border border-foreground bg-background px-10 text-center font-(--font-display) text-2xl uppercase tracking-wide text-foreground transition-transform hover:-translate-y-0.5 hover:bg-foreground/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-foreground/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:w-auto sm:min-w-[260px] md:h-[84px] md:min-w-[320px]"
               href="#"
             >
               call salon
