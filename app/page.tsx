@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <header className="mx-auto flex w-full max-w-[1400px] items-center justify-between px-8 py-8">
+      <header className="mx-auto flex w-full max-w-[1400px] items-center justify-between px-5 py-6 sm:px-8 sm:py-8">
         <div className="flex items-baseline gap-2">
           <span className="font-(--font-display) text-2xl tracking-tight">
             SalonDrake
@@ -66,29 +66,28 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="mx-auto grid w-full max-w-[1400px] grid-cols-1 items-center gap-14 px-8 pb-16 pt-8 md:grid-cols-2 md:gap-20 md:pt-16">
-        <section className="max-w-[660px]">
-          <h1 className="font-(--font-display) text-[50px] leading-[1.02] tracking-tight md:text-[66px]">
+      <main className="mx-auto grid w-full max-w-[1400px] grid-cols-1 items-center gap-14 px-5 pb-14 pt-6 sm:px-8 sm:pb-16 sm:pt-8 md:grid-cols-2 md:gap-20 md:pt-16">
+        <section className="w-full text-center sm:max-w-[660px] sm:text-left">
+          <h1 className="text-[34px] font-medium leading-[1.02] tracking-tight sm:text-[44px] md:text-[62px]">
             Your local hair salon,
-            <br />
+            {/* <br /> */}
             with <span className="italic">world class</span> style.
           </h1>
 
-          <p className="mt-8 max-w-[620px] text-[18px] leading-8 text-white/70">
-            Your go-to salon for stylish transformations —
-            <br />
-            creating custom looks for our Montreal clients
+          <p className="mt-7 max-w-none text-[24px] font-medium leading-[1.3] text-foreground sm:mt-8 sm:max-w-[620px] md:text-[26px]">
+            Your go-to salon for stylish transformations — creating custom looks
+            for our Montreal clients
           </p>
 
-          <div className="mt-10 flex flex-col items-stretch gap-4 sm:flex-row sm:items-center">
+          <div className="mt-10 flex flex-col items-stretch gap-4 sm:flex-row sm:items-center sm:justify-start">
             <a
-              className="inline-flex h-[72px] w-full items-center justify-center rounded-2xl border border-background bg-foreground px-10 text-center font-(--font-display) text-2xl uppercase tracking-wide text-background transition-transform hover:-translate-y-0.5 hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-foreground/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:w-auto sm:min-w-[260px] md:h-[84px] md:min-w-[320px]"
+              className="inline-flex h-[60px] w-full items-center justify-center rounded-2xl border border-background bg-foreground px-10 text-center text-lg font-medium uppercase tracking-wide text-background transition-transform hover:-translate-y-0.5 hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-foreground/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:h-[72px] sm:w-auto sm:min-w-[260px] sm:text-xl md:h-[84px] md:min-w-[320px] md:text-2xl"
               href="#"
             >
               book now
             </a>
             <a
-              className="inline-flex h-[72px] w-full items-center justify-center rounded-2xl border border-foreground bg-background px-10 text-center font-(--font-display) text-2xl uppercase tracking-wide text-foreground transition-transform hover:-translate-y-0.5 hover:bg-foreground/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-foreground/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:w-auto sm:min-w-[260px] md:h-[84px] md:min-w-[320px]"
+              className="inline-flex h-[60px] w-full items-center justify-center rounded-2xl border border-foreground bg-background px-10 text-center text-lg font-medium uppercase tracking-wide text-foreground transition-transform hover:-translate-y-0.5 hover:bg-foreground/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-foreground/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:h-[72px] sm:w-auto sm:min-w-[260px] sm:text-xl md:h-[84px] md:min-w-[320px] md:text-2xl"
               href="#"
             >
               call salon
@@ -128,7 +127,7 @@ export default function Home() {
         </section>
       </main>
 
-      <section className="mx-auto w-full max-w-[1400px] px-8 pb-24 pt-4">
+      <section className="mx-auto w-full max-w-[1400px] px-5 pb-20 pt-2 sm:px-8 sm:pb-24 sm:pt-4">
         <div className="flex items-start justify-between gap-10">
           <div>
             <div className="text-sm font-medium tracking-tight text-foreground/70">
