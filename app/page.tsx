@@ -132,14 +132,17 @@ export default function Home() {
           <div className="text-sm font-medium tracking-tight text-foreground/70">
             about us
           </div>
-          <h2 className="mt-4 font-(--font-display) text-[40px] leading-[1.05] tracking-tight">
+          <h2
+            className="mt-4 font-(--font-display) text-[32px] leading-[1.05] tracking-tight"
+            style={{ fontWeight: 500 }}
+          >
             SalonDrake is a place where
             <br />
             you can <span className="italic">relax</span> and{" "}
             <span className="italic">unwind</span>.
           </h2>
 
-          <p className="mx-auto mt-6 max-w-[560px] text-[18px] font-medium leading-8 text-foreground/75">
+          <p className="mx-auto mt-6 max-w-[560px] text-[18px] font-medium leading-8 text-foreground">
             Located in the heart of Montreal, we blend the latest trends with
             timeless techniques to create styles that feel uniquely you.
           </p>
@@ -186,12 +189,15 @@ export default function Home() {
       </section>
 
       <section className="mx-auto w-full max-w-[1400px] px-5 pb-20 pt-2 sm:px-8 sm:pb-24 sm:pt-4">
-        <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-start sm:gap-10">
+        <div className="flex flex-col items-center justify-between gap-6 text-center sm:flex-row sm:items-start sm:gap-10 sm:text-left">
           <div>
             <div className="text-sm font-medium tracking-tight text-foreground/70">
               services
             </div>
-            <h2 className="mt-3 font-(--font-display) text-[34px] font-medium leading-[1.05] tracking-tight sm:text-[42px] md:text-[56px]">
+            <h2
+              className="mt-3 font-(--font-display) text-[40px] leading-[1.05] tracking-tight"
+              style={{ fontWeight: 500 }}
+            >
               We offer wide range of services
             </h2>
           </div>
@@ -235,7 +241,10 @@ export default function Home() {
                 </div>
               </div>
 
-              <h3 className="mt-7 text-center font-(--font-display) text-[28px] font-medium tracking-tight">
+              <h3
+                className="mt-7 text-center font-(--font-display) text-[28px] tracking-tight"
+                style={{ fontWeight: 500 }}
+              >
                 {service.title}
               </h3>
               <p className="mt-4 text-center text-[18px] font-medium leading-7 text-foreground/70">
@@ -265,11 +274,14 @@ export default function Home() {
         <div className="rounded-[28px] bg-foreground/10 p-8 sm:p-10 md:p-12">
           <div className="flex flex-col gap-10 md:flex-row md:items-end md:justify-between">
             <div>
-              <h3 className="font-(--font-display) text-[34px] leading-[1.1] tracking-tight sm:text-[40px]">
+              <h3
+                className="font-(--font-display) text-[34px] leading-[1.1] tracking-tight sm:text-[40px]"
+                style={{ fontWeight: 500 }}
+              >
                 Find us in Montreal
               </h3>
 
-              <div className="mt-8 space-y-7 text-[18px] leading-7 text-foreground">
+              <div className="mt-8 space-y-7 text-[18px] font-medium leading-7 text-foreground">
                 <div className="space-y-1">
                   <div>123 Drake Street</div>
                   <div>Montreal, QC H2X 1Y4</div>
@@ -381,6 +393,119 @@ export default function Home() {
                   />
                 </svg>
               </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="mx-auto w-full max-w-[1400px] px-5 pb-24 pt-10 sm:px-8 sm:pt-16">
+        <div className="text-center">
+          <div className="text-sm font-medium tracking-tight text-foreground/70">
+            testimonials
+          </div>
+          <h2
+            className="mt-4 font-(--font-display) text-[32px] leading-[1.05] tracking-tight sm:text-[40px]"
+            style={{ fontWeight: 500 }}
+          >
+            What others are saying
+          </h2>
+        </div>
+
+        <div className="mt-12 grid grid-cols-1 gap-6 sm:mt-16 lg:grid-cols-3 lg:gap-6">
+          {/* Left - Video */}
+          <div className="overflow-hidden rounded-[20px] bg-foreground/10">
+            <div className="relative aspect-3/4 w-full lg:aspect-auto lg:h-full lg:min-h-[600px]">
+              <video
+                className="absolute inset-0 h-full w-full object-cover"
+                src="https://www.pexels.com/download/video/3997183/"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+              />
+            </div>
+          </div>
+
+          {/* Middle - Light Testimonial Card */}
+          <div className="relative">
+            <div
+              className="relative flex h-full min-h-[340px] flex-col rounded-[20px] bg-foreground/10 p-8 pb-32 sm:min-h-[560px] sm:p-10 sm:pb-36 lg:min-h-[600px]"
+              style={{ fontWeight: 500 }}
+            >
+              <p
+                className="font-(--font-display) text-[20px] leading-[1.35] tracking-tight sm:text-[28px]"
+                style={{ fontWeight: 500 }}
+              >
+                The attention to detail and personal care is unmatched. Plus, I
+                love that they use eco-friendly products. I've found my go-to
+                salon, and I wouldn't trust my hair with anyone else!"
+              </p>
+
+              <div className="absolute bottom-8 left-8 sm:bottom-10 sm:left-10">
+                <div className="text-[18px] font-medium">Caroline M</div>
+                <div className="mt-1 text-xs font-medium uppercase tracking-wider text-foreground/60">
+                  SalonDrake Client
+                </div>
+              </div>
+
+              {/* Rounded cutout corner (background-colored) */}
+              <div className="pointer-events-none absolute bottom-0 right-0 h-[104px] w-[104px] rounded-[24px] rounded-tl-[32px] bg-background" />
+            </div>
+
+            {/* Avatar outside card */}
+            <div className="absolute bottom-0 right-0 h-[104px] w-[104px] overflow-hidden rounded-[18px] ring-4 ring-background">
+              <div className="relative h-full w-full">
+                <Image
+                  src="/images/hero_2.jpg"
+                  alt="Caroline M"
+                  fill
+                  sizes="100px"
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Right - Dark Testimonial Card */}
+          <div className="relative">
+            <div
+              className="relative flex h-full min-h-[340px] flex-col rounded-[20px] bg-foreground p-8 pb-32 text-background sm:min-h-[560px] sm:p-10 sm:pb-36 lg:min-h-[600px]"
+              style={{ fontWeight: 500 }}
+            >
+              <p
+                className="font-(--font-display) text-[20px] leading-[1.35] tracking-tight sm:text-[28px]"
+                style={{ fontWeight: 500 }}
+              >
+                SalonDrake is hands down the best salon in Montreal! From the
+                moment I walked in, I felt welcomed and relaxed. The atmosphere
+                is so inviting, and the stylists really take the time to
+                understand what you want.
+              </p>
+
+              <div className="absolute bottom-8 left-8 sm:bottom-10 sm:left-10">
+                <div className="text-[18px] font-medium">Sophie J.</div>
+                <div className="mt-1 text-xs font-medium uppercase tracking-wider text-background/60">
+                  SalonDrake Client
+                </div>
+              </div>
+
+              {/* Rounded cutout corner (background-colored) */}
+              <div className="pointer-events-none absolute bottom-0 right-0 h-[104px] w-[104px] rounded-[24px] rounded-tl-[32px] bg-background" />
+            </div>
+
+            {/* Avatar outside card */}
+            <div className="absolute bottom-0 right-0 h-[104px] w-[104px] overflow-hidden rounded-[18px] ring-4 ring-background">
+              <div className="relative h-full w-full">
+                <Image
+                  src="/images/hero_3.jpg"
+                  alt="Sophie J."
+                  fill
+                  sizes="100px"
+                  className="object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>
