@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <header className="mx-auto flex w-full max-w-[1400px] items-center justify-between px-5 py-6 sm:px-8 sm:py-8">
+      <header className="mx-auto flex w-full max-w-[1400px] flex-col gap-4 px-5 py-6 sm:flex-row sm:items-center sm:justify-between sm:px-8 sm:py-8">
         <div className="flex items-baseline gap-2">
           <span className="font-(--font-display) text-2xl tracking-tight">
             SalonDrake
@@ -49,16 +49,16 @@ export default function Home() {
           </a>
         </nav>
 
-        <div className="flex items-center gap-3">
+        <div className="flex w-full flex-wrap items-center justify-center gap-2 sm:w-auto sm:justify-end sm:gap-3">
           <ThemeInvertToggle />
           <a
-            className="inline-flex items-center justify-center rounded-full bg-foreground px-6 py-2.5 text-sm font-medium text-background transition-colors hover:opacity-90"
+            className="inline-flex items-center justify-center rounded-full bg-foreground px-4 py-2 text-xs font-medium text-background transition-colors hover:opacity-90 sm:px-6 sm:py-2.5 sm:text-sm"
             href="#"
           >
             buy template
           </a>
           <a
-            className="inline-flex items-center justify-center rounded-full border border-foreground/25 bg-transparent px-6 py-2.5 text-sm font-medium transition-colors hover:bg-foreground/10"
+            className="inline-flex items-center justify-center rounded-full border border-foreground/25 bg-transparent px-4 py-2 text-xs font-medium transition-colors hover:bg-foreground/10 sm:px-6 sm:py-2.5 sm:text-sm"
             href="#"
           >
             cart
@@ -70,7 +70,7 @@ export default function Home() {
         <section className="w-full text-center sm:max-w-[660px] sm:text-left">
           <h1 className="text-[34px] font-medium leading-[1.02] tracking-tight sm:text-[44px] md:text-[62px]">
             Your local hair salon,
-            {/* <br /> */}
+            <br className="hidden sm:block" />
             with <span className="italic">world class</span> style.
           </h1>
 
@@ -79,15 +79,15 @@ export default function Home() {
             for our Montreal clients
           </p>
 
-          <div className="mt-10 flex flex-col items-stretch gap-4 sm:flex-row sm:items-center sm:justify-start">
+          <div className="mt-10 flex flex-col items-stretch gap-4 md:flex-row md:items-center md:justify-start">
             <a
-              className="inline-flex h-[60px] w-full items-center justify-center rounded-2xl border border-background bg-foreground px-10 text-center text-lg font-medium uppercase tracking-wide text-background transition-transform hover:-translate-y-0.5 hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-foreground/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:h-[72px] sm:w-auto sm:min-w-[260px] sm:text-xl md:h-[84px] md:min-w-[320px] md:text-2xl"
+              className="inline-flex h-[clamp(56px,7vw,84px)] w-full items-center justify-center rounded-2xl border border-background bg-foreground px-[clamp(24px,4vw,40px)] text-center text-[clamp(16px,2.2vw,24px)] font-medium uppercase tracking-wide text-background transition-transform hover:-translate-y-0.5 hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-foreground/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background md:w-auto md:min-w-[clamp(220px,22vw,320px)]"
               href="#"
             >
               book now
             </a>
             <a
-              className="inline-flex h-[60px] w-full items-center justify-center rounded-2xl border border-foreground bg-background px-10 text-center text-lg font-medium uppercase tracking-wide text-foreground transition-transform hover:-translate-y-0.5 hover:bg-foreground/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-foreground/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:h-[72px] sm:w-auto sm:min-w-[260px] sm:text-xl md:h-[84px] md:min-w-[320px] md:text-2xl"
+              className="inline-flex h-[clamp(56px,7vw,84px)] w-full items-center justify-center rounded-2xl border border-foreground bg-background px-[clamp(24px,4vw,40px)] text-center text-[clamp(16px,2.2vw,24px)] font-medium uppercase tracking-wide text-foreground transition-transform hover:-translate-y-0.5 hover:bg-foreground/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-foreground/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background md:w-auto md:min-w-[clamp(220px,22vw,320px)]"
               href="#"
             >
               call salon
@@ -96,10 +96,10 @@ export default function Home() {
         </section>
 
         <section className="flex justify-center md:justify-end">
-          <div className="relative w-full max-w-[680px] rounded-[40px] bg-foreground px-0 py-10 md:py-14">
+          <div className="relative w-full max-w-[680px] rounded-[40px] bg-foreground px-0 py-8 sm:py-10 md:min-w-[520px] md:max-w-[720px] md:py-14 lg:max-w-[760px]">
             <HeroMarquee
-              heightClass="h-[400px] md:h-[500px]"
-              cardWidthClass="w-[300px] md:w-[380px]"
+              heightClass="h-[320px] sm:h-[400px] md:h-[500px]"
+              cardWidthClass="w-[240px] sm:w-[300px] md:w-[380px]"
               repeat={6}
               speedPxPerSecond={40}
               startDirection="right"
@@ -127,26 +127,84 @@ export default function Home() {
         </section>
       </main>
 
+      <section className="mx-auto w-full max-w-[1400px] px-5 pb-20 pt-6 sm:px-8 sm:pb-24 sm:pt-10">
+        <div className="mx-auto max-w-[760px] text-center">
+          <div className="text-sm font-medium tracking-tight text-foreground/70">
+            about us
+          </div>
+          <h2 className="mt-4 font-(--font-display) text-[40px] leading-[1.05] tracking-tight">
+            SalonDrake is a place where
+            <br />
+            you can <span className="italic">relax</span> and{" "}
+            <span className="italic">unwind</span>.
+          </h2>
+
+          <p className="mx-auto mt-6 max-w-[560px] text-[18px] font-medium leading-8 text-foreground/75">
+            Located in the heart of Montreal, we blend the latest trends with
+            timeless techniques to create styles that feel uniquely you.
+          </p>
+
+          <a
+            href="#"
+            className="mt-8 inline-flex h-12 items-center justify-center rounded-full border border-foreground/25 bg-transparent px-7 text-sm font-medium transition-colors hover:bg-foreground/10"
+          >
+            about us
+          </a>
+        </div>
+
+        <div className="mx-auto mt-10 flex max-w-[1120px] flex-col gap-6 sm:mt-14 sm:gap-8 md:grid md:grid-cols-12 md:items-start md:gap-10 lg:gap-14">
+          {/* Big image - second on mobile (order-2), LEFT on desktop (col 1-7) */}
+          <div className="order-2 md:order-0 md:col-span-7">
+            <div className="w-full max-w-[496px] overflow-hidden rounded-[20px]">
+              <div className="relative aspect-4/5 w-full">
+                <Image
+                  src="/images/hero_3.jpg"
+                  alt="Salon service in progress"
+                  fill
+                  sizes="(min-width: 1024px) 600px, (min-width: 768px) 50vw, 92vw"
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Small image - first on mobile (order-1), RIGHT on desktop (col 8-12), positioned higher */}
+          <div className="order-1 md:order-0 md:col-span-5 md:flex md:justify-end md:pt-24 lg:pt-32">
+            <div className="mx-auto w-full max-w-[280px] overflow-hidden rounded-[20px] sm:max-w-[300px] md:mx-0 md:max-w-[322px]">
+              <div className="relative aspect-square w-full">
+                <Image
+                  src="/images/hero_1.jpg"
+                  alt="Salon client"
+                  fill
+                  sizes="(min-width: 1024px) 420px, (min-width: 768px) 380px, 360px"
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="mx-auto w-full max-w-[1400px] px-5 pb-20 pt-2 sm:px-8 sm:pb-24 sm:pt-4">
-        <div className="flex items-start justify-between gap-10">
+        <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-start sm:gap-10">
           <div>
             <div className="text-sm font-medium tracking-tight text-foreground/70">
               services
             </div>
-            <h2 className="mt-3 font-(--font-display) text-[46px] leading-[1.05] tracking-tight md:text-[56px]">
+            <h2 className="mt-3 font-(--font-display) text-[34px] font-medium leading-[1.05] tracking-tight sm:text-[42px] md:text-[56px]">
               We offer wide range of services
             </h2>
           </div>
 
           <a
             href="#"
-            className="mt-6 inline-flex h-12 items-center justify-center rounded-full border border-foreground/25 bg-transparent px-7 text-sm font-medium transition-colors hover:bg-foreground/10"
+            className="inline-flex h-12 items-center justify-center rounded-full border border-foreground/25 bg-transparent px-7 text-sm font-medium transition-colors hover:bg-foreground/10 sm:mt-6"
           >
             see all
           </a>
         </div>
 
-        <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
+        <div className="mx-auto mt-10 grid max-w-[520px] grid-cols-1 gap-6 sm:mt-12 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-6">
           {[
             {
               title: "Haircuts & styling",
@@ -163,7 +221,7 @@ export default function Home() {
           ].map((service) => (
             <article
               key={service.title}
-              className="rounded-[28px] bg-foreground/10 p-7 md:p-8"
+              className="rounded-[28px] bg-foreground/10 p-6 sm:p-7 md:p-8"
             >
               <div className="overflow-hidden rounded-[22px] bg-foreground/10">
                 <div className="relative aspect-4/3 w-full">
@@ -177,15 +235,154 @@ export default function Home() {
                 </div>
               </div>
 
-              <h3 className="mt-7 text-center font-(--font-display) text-2xl tracking-tight">
+              <h3 className="mt-7 text-center font-(--font-display) text-[28px] font-medium tracking-tight">
                 {service.title}
               </h3>
-              <p className="mt-4 text-center text-[15px] leading-7 text-foreground/70">
+              <p className="mt-4 text-center text-[18px] font-medium leading-7 text-foreground/70">
                 Fusce a quam. Vestibulum turpis sem, aliquet eget, lobortis
                 pellentesque, rutrum eu, nisl.
               </p>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section className="mx-auto w-full max-w-[1400px] px-5 pb-10 sm:px-8 sm:pb-12">
+        <div className="overflow-hidden rounded-[28px] bg-foreground/10">
+          <div className="relative aspect-21/9 w-full sm:aspect-20/9">
+            <Image
+              src="/images/hero_4.jpg"
+              alt="Salon interior"
+              fill
+              sizes="(min-width: 1024px) 1400px, 92vw"
+              className="object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto w-full max-w-[1400px] px-5 pb-24 sm:px-8">
+        <div className="rounded-[28px] bg-foreground/10 p-8 sm:p-10 md:p-12">
+          <div className="flex flex-col gap-10 md:flex-row md:items-end md:justify-between">
+            <div>
+              <h3 className="font-(--font-display) text-[34px] leading-[1.1] tracking-tight sm:text-[40px]">
+                Find us in Montreal
+              </h3>
+
+              <div className="mt-8 space-y-7 text-[18px] leading-7 text-foreground">
+                <div className="space-y-1">
+                  <div>123 Drake Street</div>
+                  <div>Montreal, QC H2X 1Y4</div>
+                  <div>Canada</div>
+                </div>
+
+                <div className="space-y-2">
+                  <a
+                    href="mailto:hello@salondrake.com"
+                    className="underline underline-offset-4 hover:opacity-80"
+                  >
+                    hello@salondrake.com
+                  </a>
+                  <div>
+                    <a
+                      href="tel:+15145550199"
+                      className="underline underline-offset-4 hover:opacity-80"
+                    >
+                      +1 (514) 555-0199
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-3 md:justify-end">
+              <a
+                href="#"
+                aria-label="TikTok"
+                className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-foreground/25 bg-transparent transition-colors hover:bg-foreground/10"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M14 3v10.2a4.8 4.8 0 1 1-4-4.74"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M14 3c.7 3.1 2.9 5.3 6 6"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </a>
+              <a
+                href="#"
+                aria-label="Instagram"
+                className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-foreground/25 bg-transparent transition-colors hover:bg-foreground/10"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <rect
+                    x="3"
+                    y="3"
+                    width="18"
+                    height="18"
+                    rx="5"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  />
+                  <path
+                    d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  />
+                  <path
+                    d="M17.5 6.5h.01"
+                    stroke="currentColor"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </a>
+              <a
+                href="#"
+                aria-label="X"
+                className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-foreground/25 bg-transparent transition-colors hover:bg-foreground/10"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M4 4l16 16M20 4L4 20"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
         </div>
       </section>
     </div>
